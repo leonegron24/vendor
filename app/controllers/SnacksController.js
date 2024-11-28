@@ -16,15 +16,16 @@ export class SnacksController {
   }
 
   addQuarter(){
+    console.log('clicked AddQuarter Button')
     snacksService.addQuarter()
+    this.drawBank()
   }
 
   drawBank(){
     const bankElm = document.getElementById('bank')
-    const Availablemoney = AppState.money
     let bankContent = ''
-    bankContent += Availablemoney.(Snack.BankTemplateCard)
-    bankElm?.innerHTML = bankContent
+    bankContent += Snack.BankTemplateCard
+    bankElm.innerHTML = bankContent
   }
 
 }

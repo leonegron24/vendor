@@ -46,10 +46,12 @@
   <main class="container-fluid">
     <div id = 'snacks-container' class="row"></div>
     <div id = 'make-money' class="row justify-content-center" >
-      <button class=" col-3 btn btn-primary m-4 fw-bold" onclick="addQuarter()">Click for Money</button>
+      <button class=" col-3 btn btn-primary m-4 fw-bold" onclick="app.SnacksController.addQuarter()">Click for Money</button>
     </div>
     <div class="row h2 justify-content-center">Money Available for Snacks:
-      <div id="bank"></div> 
+      <div id='bank' class="text-center">
+        <span>$0.00</span>
+      </div> 
     </div>
   </main>
 

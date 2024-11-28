@@ -21,9 +21,9 @@ export class Snack {
             `
       }
     
-    get BankTemplateCard(){
+    static get BankTemplateCard(){
         return /*html*/ `
-            <span> ${AppState.money} </span>
+            <span> $${AppState.money} </span>
         `
     }
 

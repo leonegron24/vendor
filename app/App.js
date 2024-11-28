@@ -4,7 +4,7 @@ const USE_ROUTER = false
 
 class App {
 
-  PlayerController = new SnacksController
+  SnacksController = new SnacksController
 
   constructor() {
     if (USE_ROUTER) {

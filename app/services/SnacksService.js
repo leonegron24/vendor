@@ -4,8 +4,8 @@ import { Snack } from "../models/Snack.js";
 class SnacksService {
 
     addQuarter(){
-        let money = AppState.money
-        money += 0.25
+        AppState.money += 0.25
+        console.log(AppState.money)
     }
 }
 
