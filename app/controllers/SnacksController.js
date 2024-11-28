@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { Snack } from "../models/Snack.js"
 import { snacksService } from "../services/SnacksService.js"
 
 export class SnacksController {
@@ -14,5 +15,16 @@ export class SnacksController {
     snacksElm.innerHTML = snacksContent
   }
 
+  addQuarter(){
+    snacksService.addQuarter()
+  }
+
+  drawBank(){
+    const bankElm = document.getElementById('bank')
+    const Availablemoney = AppState.money
+    let bankContent = ''
+    bankContent += Availablemoney.(Snack.BankTemplateCard)
+    bankElm?.innerHTML = bankContent
+  }
 
 }

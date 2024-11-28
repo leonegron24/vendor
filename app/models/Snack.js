@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class Snack {
     constructor(data) {
        this.name = data.name
@@ -18,5 +20,11 @@ export class Snack {
             </div>
             `
       }
+    
+    get BankTemplateCard(){
+        return /*html*/ `
+            <span> ${AppState.money} </span>
+        `
+    }
 
  }
