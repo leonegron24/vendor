@@ -5,7 +5,7 @@ export class Snack {
        this.name = data.name
        this.price = data.price
        this.imgUrl = data.imgUrl
-       this.payed = data.payed
+       this.showButton = false
     }
 
     get SnacksTemplateCard(){
@@ -14,7 +14,7 @@ export class Snack {
               <div class="card-body fw-bold">
                   ${this.name}: $${this.price}
               </div>
-              <button class="btn btn-warning m-3" onclick="app.SnacksController.purchaseSnack('${this.name}')" > Purchase </button>
+              <button class="btn btn-warning m-3 ${this.showButton ? '': 'd-none'}" onclick="app.SnacksController.purchaseSnack('${this.name}')" > Purchase </button>
               <img src=${this.imgUrl}>
 
             </div>

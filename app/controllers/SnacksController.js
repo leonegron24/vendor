@@ -5,7 +5,7 @@ import { snacksService } from "../services/SnacksService.js"
 export class SnacksController {
   constructor() {
     console.log('This is the Snacks Controller')
-    this.drawSnacks()
+    this.availableSnacks()
   }
   drawSnacks(){
     const snacksElm = document.getElementById('snacks-container')
@@ -14,18 +14,31 @@ export class SnacksController {
     snacks.forEach((snacks) => snacksContent += snacks.SnacksTemplateCard)
     snacksElm.innerHTML = snacksContent
   }
-
-  addQuarter(){
-    console.log('clicked AddQuarter Button')
-    snacksService.addQuarter()
-    this.drawBank()
-  }
-
+  
   drawBank(){
     const bankElm = document.getElementById('bank')
     let bankContent = ''
     bankContent += Snack.BankTemplateCard
     bankElm.innerHTML = bankContent
+  }
+
+  addQuarter(){
+    console.log('clicked AddQuarter Button')
+    snacksService.addQuarter()
+    this.drawBank()
+    this.availableSnacks()
+  }
+
+  purchaseSnack(snackName){
+    console.log('clicked purchase', snackName)
+    snacksService.purchaseSnack(snackName)
+    this.drawBank()
+  }
+
+  availableSnacks(){
+    console.log('Observing snack options based on money available')
+    snacksService.availableSnacks()
+    this.drawSnacks()
   }
 
 }
