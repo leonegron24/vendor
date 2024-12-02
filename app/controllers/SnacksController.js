@@ -33,6 +33,7 @@ export class SnacksController {
     console.log('clicked purchase', snackName)
     snacksService.purchaseSnack(snackName)
     this.drawBank()
+    this.availableSnacks()
   }
 
   availableSnacks(){

@@ -21,20 +21,17 @@ class SnacksService {
         }else{
             window.alert('Not enough money for this Snack! ' + snackName + ' costs $' + snackToBuy.price+ '. Please add more money!')
         }
+        if (snackToBuy.price > AppState.money){
+            snackToBuy.showButton = false
+        }
 
     }
 
     availableSnacks(){
-        console.log('Money Available', AppState.money)
-        const snacksAvailable = AppState.snacks.find(snack =>  AppState.money >= snack.price)
-        console.log('Available Snack', snacksAvailable)
-        if (!snacksAvailable){
-            return
-        }
-        console.log('button value' + snacksAvailable.showButton)
-        snacksAvailable.showButton = !snacksAvailable.showButton
-    
-        
+        let snacksAvailable = AppState.snacks.filter(snack => AppState.money >= snack.price);
+        snacksAvailable.forEach(snack => snack.showButton = true)
+        let snacksNotAvailable = AppState.snacks.filter(snack => AppState.money < snack.price)
+        snacksNotAvailable.forEach(snack => snack.showButton = false)
     }
 }
 
