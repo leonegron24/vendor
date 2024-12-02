@@ -9,12 +9,10 @@ class SnacksService {
     }
 
     purchaseSnack(snackName){
-        console.log(snackName)
         const snackToBuy = AppState.snacks.find(snack => snackName == snack.name)
         if (!snackToBuy){
             return
         }
-        console.log(snackToBuy)
         if (AppState.money >= snackToBuy.price){
             AppState.money -= snackToBuy.price
             window.alert('Enjoy your ' + snackName)
