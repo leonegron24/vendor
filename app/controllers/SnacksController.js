@@ -12,6 +12,9 @@ export class SnacksController {
     const snacks = AppState.snacks
     let snacksContent = ''
     snacks.forEach((snacks) => snacksContent += snacks.SnacksTemplateCard)
+    if (!snacksElm){
+      return
+    }
     snacksElm.innerHTML = snacksContent
   }
   
@@ -19,6 +22,9 @@ export class SnacksController {
     const bankElm = document.getElementById('bank')
     let bankContent = ''
     bankContent += Snack.BankTemplateCard
+    if (!bankElm){
+      return
+    }
     bankElm.innerHTML = bankContent
   }
 
@@ -34,6 +40,13 @@ export class SnacksController {
     snacksService.purchaseSnack(snackName)
     this.drawBank()
     this.availableSnacks()
+    const purchasedSnackElm = document.getElementById('purchased-snacks')
+    let purchasedSnacksContent = ''
+    AppState.purchasedSnacks.forEach((snacks) => purchasedSnacksContent += snacks.SnacksTemplateCard)
+    if (!purchasedSnackElm){
+      return
+    }
+    purchasedSnackElm.innerHTML = purchasedSnacksContent
   }
 
   availableSnacks(){

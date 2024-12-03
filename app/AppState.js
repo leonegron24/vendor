@@ -40,6 +40,8 @@ class ObservableAppState extends EventEmitter {
  
   money = 0
 
+  purchasedSnacks = []
+
 
 
 

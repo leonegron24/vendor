@@ -16,12 +16,15 @@ class SnacksService {
         if (AppState.money >= snackToBuy.price){
             AppState.money -= snackToBuy.price
             window.alert('Enjoy your ' + snackName)
+            console.log(snackToBuy)
+            AppState.purchasedSnacks.push(snackToBuy)
         }else{
             window.alert('Not enough money for this Snack! ' + snackName + ' costs $' + snackToBuy.price+ '. Please add more money!')
         }
         if (snackToBuy.price > AppState.money){
             snackToBuy.showButton = false
         }
+
 
     }
 
