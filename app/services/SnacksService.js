@@ -29,10 +29,10 @@ class SnacksService {
     }
 
     availableSnacks(){
-        let snacksAvailable = AppState.snacks.filter(snack => AppState.money >= snack.price);
-        snacksAvailable.forEach(snack => snack.showButton = true)
-        let snacksNotAvailable = AppState.snacks.filter(snack => AppState.money < snack.price)
-        snacksNotAvailable.forEach(snack => snack.showButton = false)
+        // let snacksAvailable = AppState.snacks.filter(snack => AppState.money >= snack.price);
+        AppState.snacks.forEach(snack => snack.showButton = AppState.money>=snack.price)
+        // let snacksNotAvailable = AppState.snacks.filter(snack => AppState.money < snack.price)
+        // snacksNotAvailable.forEach(snack => snack.showButton = false)
     }
 }
 

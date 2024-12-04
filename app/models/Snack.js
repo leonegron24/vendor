@@ -21,6 +21,18 @@ export class Snack {
             `
       }
     
+      get PurchasedTemplateCard(){
+        return /*html*/ `
+            <div class ='card bg-success col-2 p-4 m-4'>
+              <div class="card-body fw-bold">
+                  ${this.name}: $${this.price}
+              </div>
+              <img src=${this.imgUrl}>
+
+            </div>
+            `
+      }
+    
     static get BankTemplateCard(){
         return /*html*/ `
             <span> $${AppState.money} </span>

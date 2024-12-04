@@ -42,7 +42,7 @@ export class SnacksController {
     this.availableSnacks()
     const purchasedSnackElm = document.getElementById('purchased-snacks')
     let purchasedSnacksContent = ''
-    AppState.purchasedSnacks.forEach((snacks) => purchasedSnacksContent += snacks.SnacksTemplateCard)
+    AppState.purchasedSnacks.forEach((snacks) => purchasedSnacksContent += snacks.PurchasedTemplateCard)
     if (!purchasedSnackElm){
       return
     }
